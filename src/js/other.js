@@ -1,3 +1,3 @@
 export function bar () {
-    return 9;
+    return 15;
 }

@@ -4,6 +4,7 @@ var buildPath = path.join(__dirname, 'dist');
 
 module.exports = {
     context: srcPath,
+    devtool: "inline-sourcemap",
     entry: path.join(srcPath, 'js', 'client.js'),
     output: {
         path: buildPath,
