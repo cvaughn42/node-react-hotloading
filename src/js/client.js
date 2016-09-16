@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider, connect } from "react-redux";
-import {bar} from './other';
 
 class Main extends React.Component {
     // constructor(props) {
@@ -22,21 +21,21 @@ class Main extends React.Component {
         );
     }
 }
+
 Main = connect((state) => {
     return {
         user: state.user,
         tweets: state.tweets,
-    };
+    }
 })(Main);
 
-function reducer(state = {
+var initState = {
     user: 'Bill',
     tweets: ['I like cats.', 'Also food.']
-}, action) {
+};
+const store = createStore(function (state = initState, action) {
     return state;
-}
-
-const store = createStore(reducer);
+});
 
 const app = document.getElementById('app');
 ReactDOM.render(

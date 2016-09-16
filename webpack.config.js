@@ -4,7 +4,7 @@ var buildPath = path.join(__dirname, 'dist');
 
 module.exports = {
     context: srcPath,
-    devtool: "inline-sourcemap",
+    devtool: "inline-source-map",
     entry: path.join(srcPath, 'js', 'client.js'),
     output: {
         path: buildPath,
@@ -15,8 +15,7 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 loaders: ['react-hot'],
-                include: path.join(__dirname, 'dist')
-
+                include: buildPath
             },
             {
                 test: /\.jsx?$/,
@@ -25,7 +24,7 @@ module.exports = {
                 query: {
                     presets: ['react', 'es2015']
                 },
-                include: path.join(__dirname, 'src')
+                include: srcPath
             }
         ]
     }
