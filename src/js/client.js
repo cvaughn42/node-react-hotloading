@@ -14,7 +14,7 @@ class Main extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick() {
+    handleClick(evt) {
         this.props.dispatch(doWhatever());
     }
 
